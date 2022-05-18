@@ -65,23 +65,23 @@
       font-weight: 600;
     }
     .textbox {
-      margin: 30px 420px;
-      width: 450px;
-      background: #f7d800;
-      color: #fff;
-      outline: none;
-      border-radius: 25px;
-      border: 1px solid transparent;
-      line-height: 50px;
-      height: 50px;
-      padding-left: 50px;
-      padding-right: 25px;
-      position: relative;
+      display: flex;
+      border-radius: 30px;
+      justify-content: center;
+      padding: 10px;
+      margin: 0 auto;
+      background-color: #f7d800;
+      width: 400px;
+      margin-top: 20px;
       .search {
         background: transparent;
         outline: none;
         border: none;
         width: 100%;
+        margin-left: 5px;
+      }
+      .icon {
+        padding: 5px;
       }
     }
   }

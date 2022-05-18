@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Specialty from "./Specialty";
 import "./Header.scss";
+import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Homepage extends Component {
   render() {
@@ -48,11 +50,17 @@ class Homepage extends Component {
             <div className="title1">MEDICAL BACKGROUND</div>
             <div className="title2">COMPREHENSIVE HEALTH CARE</div>
             <div className="textbox">
+              <FontAwesomeIcon className="icon" icon={faCoffee} />
               <input
                 type="text"
                 className="search"
                 placeholder="Search Something"
               ></input>
+            </div>
+          </div>
+          <div className="content-down">
+            <div className="options">
+              <div className="child"></div>
             </div>
           </div>
         </div>
