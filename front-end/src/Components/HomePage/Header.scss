@@ -85,4 +85,48 @@
       }
     }
   }
+  .content-down {
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 1)
+    );
+    .options {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      .child {
+        width: 100%;
+        display: flex;
+        gap: 70px;
+        .icon-child {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          text-align: center;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          background-color: white;
+          position: relative;
+          img {
+            width: 80%;
+            height: 80%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+        .text-child {
+          font-size: 15px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
 }
