@@ -20,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       phone: DataTypes.STRING,
       gender: DataTypes.STRING,
       position: DataTypes.STRING,
+      image:DataTypes.TEXT('long'),
     },
     {
       sequelize,

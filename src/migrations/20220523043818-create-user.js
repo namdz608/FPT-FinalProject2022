@@ -26,6 +26,9 @@ module.exports = {
       position: {
         type: Sequelize.STRING,
       },
+      image:{
+        type: Sequelize.TEXT('long'),
+      },
       password: {
         type: Sequelize.STRING,
       },
