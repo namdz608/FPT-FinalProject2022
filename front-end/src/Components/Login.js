@@ -1,17 +1,40 @@
 import React, { Component } from "react";
 import "./Login.scss";
 import { connect } from "react-redux";
+import {handleLoginApi} from "../ApiServices/api" 
 class Login extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      email:'',
+			password:'',
+    };
   }
   componentDidMount() {}
   DeleteUser = (user) => {
-    console.log("iiii", user);
     this.props.deleteUserRedux(user);
   };
+
+  Login=async()=>{
+    let status=await handleLoginApi(this.state.email,this.state.password)
+    console.log("iiii", status)
+  }
+
+  ChangeEmail=(event)=>{
+    let a=event.target.value;
+    this.setState({
+      email:a
+    })
+  }
+
+  ChangePassword=(event)=>{
+    let b=event.target.value;
+    this.setState({
+      password:b
+    })
+  }
   render() {
+    let {email,password} = this.state
     let dataRedux = this.props.dataRedux;
     return (
       <>
@@ -30,13 +53,15 @@ class Login extends Component {
         <div class="container">
           <div class="screen">
             <div class="screen__content">
-              <form class="login">
+              <div class="login">
                 <div class="login__field">
                   <i class="login__icon fas fa-user"></i>
                   <input
                     type="text"
                     class="login__input"
+                    value={email}
                     placeholder="User name / Email"
+                    onChange={(event)=>this.ChangeEmail(event)}
                   />
                 </div>
                 <div class="login__field">
@@ -45,13 +70,15 @@ class Login extends Component {
                     type="password"
                     class="login__input"
                     placeholder="Password"
+                    value={password}
+                    onChange={(event)=>this.ChangePassword(event)}
                   />
                 </div>
-                <button class="button login__submit">
+                <button class="button login__submit" onClick={()=>this.Login()}>
                   <span class="button__text">Log In Now</span>
-                  <i class="button__icon fas fa-chevron-right"></i>
+                  
                 </button>
-              </form>
+              </div>
               <div class="social-login">
                 <div class="social-icons">
                   <a href="#" class="social-login__icon fab fa-instagram"></a>
